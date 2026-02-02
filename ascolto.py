@@ -15,14 +15,14 @@ for i in range(1000):
             data = conn.recv(1024)
             if not data:
                 break
-            richiesta = data. decode()
-            if richiesta == 'SHUTDOWN':
-                break
-            risposta = f"Ho ricevuto il tuo messaggio: {richiesta} \n"
-            f. write(risposta)
-            conn.sendall(risposta.encode())
-        if richiesta == 'SHUTDOWN':
-            break
+            else:
+                richiesta = data. decode()
+                if richiesta == 'SHUTDOWN':
+                    exit()
+                else: 
+                    risposta = f"Ho ricevuto il tuo messaggio: {richiesta} \n"
+                    f. write(risposta)
+                    conn.sendall(risposta.encode())
     finally:
         conn.close()
 f. close()
