@@ -18,12 +18,14 @@ for i in range(1000):
             else:
                 richiesta = data. decode()
                 if richiesta == 'SHUTDOWN':
-                    exit()
+                    break
                 else: 
                     risposta = f"Ho ricevuto il tuo messaggio: {richiesta} \n"
                     f. write(risposta)
                     conn.sendall(risposta.encode())
     finally:
         conn.close()
+         if richiesta == 'SHUTDOWN':
+         break
 f. close()
 server_socket.close()
