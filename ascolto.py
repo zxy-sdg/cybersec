@@ -6,7 +6,7 @@ server_socket.bind((host, port))
 server_socket.listen(1)
 f = open('logfile.txt', 'w')
 f.write(f"Server listening on {host}: {port} \n")
-for i in range(6):
+for i in range(1000):
     conn, addr = server_socket.accept()
     f.write(f"Connected by {addr} \n")
     try:
