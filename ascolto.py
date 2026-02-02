@@ -9,6 +9,7 @@ f.write(f"Server listening on {host}:{port} \n")
 for i in range(1000):
     conn, addr = server_socket.accept()
     f.write(f"Connected by {addr} \n")
+    richiesta = 'SHUTDOWN'
     try:
         while True:
             data = conn.recv(1024)
